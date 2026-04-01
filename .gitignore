@@ -1,0 +1,13 @@
+# Ignorar todos los ejecutables de Windows
+*.exe
+
+# Ignorar archivos objeto (se crean al compilar en C++)
+*.o
+*.obj
+
+# Ignorar la carpeta de configuración de VS Code (donde están tus rutas locales)
+.vscode/
+
+# Ignorar archivos temporales del sistema
+desktop.ini
+.DS_Store
