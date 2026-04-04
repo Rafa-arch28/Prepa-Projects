@@ -1,3 +1,7 @@
+/* 4. Escriba un programa para llenar una matriz de 5 x 5 y que este 
+almacene la diagonal principal en un arreglo.
+ */
+
 #include <iostream>
 #include <cstdlib> // es mi primera vez usando esta libreria, es para generar randoms
 #include <ctime>  // esta es para generar una semilla que simepre sea distinta, habl mas de esto abajo
