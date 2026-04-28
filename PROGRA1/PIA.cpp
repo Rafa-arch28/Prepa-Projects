@@ -38,7 +38,7 @@ int main() {
 
         switch (opcion) {
         case 1:
-            cout << "\nSELECCIONE DEPARTAMENTO" << endl;
+            cout << "\nSELECCIONE EL DEPARTAMENTO" << endl;
             cout << "1. Ventas" << endl;
             cout << "2. Contabilidad" << endl;
             cout << "3. Recursos Humanos" << endl;
