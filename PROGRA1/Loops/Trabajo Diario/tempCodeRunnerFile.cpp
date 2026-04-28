@@ -3,21 +3,15 @@ using namespace std;
 
 int main() {
 
-    for (int k = 0; k < 500; k++) {
-        cout << (k + 1) * 2 << endl;
-    }
-    
-    /* int acumulador = 0;
-    while (acumulador < 500) {
-        cout << (acumulador + 1) * 2 << endl;
-        acumulador++;
-    } */
+    int suma = 0;
 
-    /* int acumulador = 0;
-    do {
-        cout << (acumulador + 1) * 2 << endl;
-        acumulador++;
-    } while (acumulador < 500); */
-    
+    for (int i = 10; i <= 50; i++) {
+        if (i % 2 != 0) {
+            suma += i;
+        }
+    }
+
+    cout << "La suma es: " << suma;
+
     return 0;
 }
