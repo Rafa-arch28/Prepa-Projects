@@ -260,9 +260,9 @@ int main() {
                     }
                 }
             } while (opc != 7);
-            cout << "SALIENDO DEL PROGRAMA, GRACIAS POR ENTRAR";
+            cout << "SALIENDO DEL MENU DOCTOR, GRACIAS POR ENTRAR\n";
         } else {
-            cout << "CONTRASENA INCORRECTA, INTENTE DE NUEVO";
+            cout << "CONTRASENA INCORRECTA, INTENTE DE NUEVO\n";
         }
     } else if (usuario == "USUARIO") {
         
@@ -389,6 +389,8 @@ int main() {
         cout << "\n\n";
 
     } while (repetir_programa == 'S' || repetir_programa == 's');
+
+    cout << "Saliendo del programa, Gracias por ingresar :)" << endl;
 
     return 0;
 }
