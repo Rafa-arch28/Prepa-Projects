@@ -62,9 +62,12 @@ int main() {
     int paciente_borrar = 0;
     int doctor_borrar = 0;
     int numero_registro = 0;
+    char repetir_programa;
 
     // INICIAMOS CON LA LOGICA
-    cout << "Ingrese su tipo de usuario: ";
+    do {
+        cout << "MENU PARA UNA CLINICA \n\n";
+        cout << "Ingrese su tipo de usuario: \nTipos de usuario: \nUSUARIO \nDOCTOR, contra DOCTOR: ADMIN123\n";
     cin >> usuario; cout << endl;
 
     if (usuario == "DOCTOR") {
@@ -98,7 +101,7 @@ int main() {
                         getline(cin, contrasena_paciente[contador]);
 
                         do {
-                            cout << "Ingrese el tipo de estudio: \nDIABETOLOGIA\nCARDIOLOGIA\nNUTRICION";
+                            cout << "Ingrese el tipo de estudio: \nDIABETOLOGIA\nCARDIOLOGIA\nNUTRICION\n";
                             getline(cin, tipo_estudio[contador]);  // uso getline para saltarme los espacios
                             if (tipo_estudio[contador] != "DIABETOLOGIA" && 
                                 tipo_estudio[contador] != "CARDIOLOGIA" && 
@@ -342,7 +345,7 @@ int main() {
 
                             }
                             if (!doctor_encontrado) {
-                                cout << "Actualmente no tenemos especialistas " << tipo_estudio[indice] << " registrados." << endl;
+                                cout << "Actualmente no tenemos especialistas " << tipo_estudio[indice] << " registrados" << endl;
                             }
                             cout << endl;
 
@@ -378,8 +381,14 @@ int main() {
             cout << "CONTRASENA O NOMBRE INCORRECTOS, ACCESO DENEGADO.\n";
         }
     } else {
-        cout << "OPCION NO VALIDA, VUELVA A INICIAR EL PROGRAMA";
+        cout << "OPCION NO VALIDA, VUELVA A INICIAR EL PROGRAMA\n";
     }
+
+        cout << "\nDesea volver a iniciar sesion? (S/N): ";
+        cin >> repetir_programa;
+        cout << "\n\n";
+
+    } while (repetir_programa == 'S' || repetir_programa == 's');
 
     return 0;
 }
