@@ -39,3 +39,10 @@ Este menu se mostrara al poner en el tipo de usuario "DOCTOR", se pondra la cont
 ## Funcion para imprimir registros
 ## Funcion para agregar pacientes
 ## Funcion para agregar doctores
+
+### CONTRASENA DEL DOCTOR
+ADMIN123
+
+### TIPOS DE USUARIO: 
+Doctor
+Usuario
