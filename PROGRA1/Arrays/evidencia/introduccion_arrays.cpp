@@ -5,10 +5,10 @@ La cantidad de elementos en el arreglo.
 Los elementos del arreglo.
 La suma de todos los elementos. */
 
- #include <iostream>
- using namespace std;
+#include <iostream>
+using namespace std;
 
- int main() {
+int main() {
 
     double suma = 0;
     int tamano_arreglo;
