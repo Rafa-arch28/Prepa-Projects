@@ -14,7 +14,7 @@ int main() {
     cout << "La lista de invitados: " << endl;
 
     for (int k = 0; k <= 4; k++) {
-        cout << arreglo[k] << endl;
+        cout << "SKIBIDI " << arreglo[k] << endl;
     }
 
     return 0;
