@@ -12,9 +12,7 @@ int main() {
         suma += arreglo[k];
     }
 
-    for (int k = 0; k <= 4; k++) {
-        cout << "La suma es: " << suma << endl;
-    }
+    cout << "La suma es: " << suma << endl;
 
     return 0;
 }

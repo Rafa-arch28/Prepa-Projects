@@ -25,6 +25,7 @@ int main() {
     }
 
     cout << "\nLa suma de los arreglos es:" << endl;
+    
     for(int i = 0; i < tamano; i++) {
         suma[i] = arreglo1[i] + arreglo2[i];
         cout << arreglo1[i] << " + " << arreglo2[i] << " = " << suma[i] << endl;
