@@ -39,11 +39,11 @@ int main() {
     cout << "La cantidad de elementos del arreglo es: " << tamano_arreglo << endl;
 
     return 0;
- }
+}
 
- /* Es mi primera vez con arreglos y tuve muchos errores con el for porque se me olvido la condicion,
- primero pedi 3 numeros si ponias de tamano 2 pero lo corregi cambiando la condicion de: i <= tamano_arreglo
- a i < tamano_arreglo. Ademas de eso todo bien y creo que ya le estoy entendiendo, es interesante 
- aprender de esto porque creo que los arreglos es lo que se usa en ciencia de datos asi que quiero aprender
- mucho mas de este tema, tambien aprendi a que se pueden hacer arreglos con un tamano no especificado, creo
- que no es la mejor forma de hacerlo pero lo resolvi bien asi que todo bien :)*/
+/* Es mi primera vez con arreglos y tuve muchos errores con el for porque se me olvido la condicion,
+primero pedi 3 numeros si ponias de tamano 2 pero lo corregi cambiando la condicion de: i <= tamano_arreglo
+a i < tamano_arreglo. Ademas de eso todo bien y creo que ya le estoy entendiendo, es interesante 
+aprender de esto porque creo que los arreglos es lo que se usa en ciencia de datos asi que quiero aprender
+mucho mas de este tema, tambien aprendi a que se pueden hacer arreglos con un tamano no especificado, creo
+que no es la mejor forma de hacerlo pero lo resolvi bien asi que todo bien :)*/
