@@ -1,10 +1,3 @@
-/*
-PIA PROGRAMACION I 
-Integrantes: 
-    Gissel Azeneth Ceron Santos, Matricula: 2307281
-    Rafael Antonio de la Fuente Esparza, Matricula: 2307861
-    Kimberly Paola Rodarte Rivera, Matricula: 2307804
-*/
 
 #include <iostream>
 using namespace std;
