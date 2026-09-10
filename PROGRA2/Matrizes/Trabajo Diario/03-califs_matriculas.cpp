@@ -3,10 +3,9 @@ using namespace std;
 
 int main()
 {
-
-
     int matriculas[5];
     float califs[5][3];
+    float promedios[5];
 
     for (int i = 0; i < 5; i++)
     {
@@ -17,6 +16,8 @@ int main()
         {
             cout << "Ingrese la calificacion " << j + 1 << " del alumno: ";
             cin >> califs[i][j];
+
+            promedios[i] += califs[i][j];
         }
     }
 
@@ -28,6 +29,8 @@ int main()
         {
             cout << "Califiacion " << j + 1 << ": "<< califs[i][j] << endl;
         }
+
+        cout << "Promedio del alumno: " << promedios[i] / 3 << endl;
     }
 
     return 0;
