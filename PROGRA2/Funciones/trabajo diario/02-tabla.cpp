@@ -18,6 +18,6 @@ void tabla(int a)
 {
     for (int i = 1; i <= 10; i++)
     {
-        cout << a  << " * " << i  << " = " << a * i << endl;
+        cout << a  << " x " << i  << " = " << a * i << endl;
     }
 }
