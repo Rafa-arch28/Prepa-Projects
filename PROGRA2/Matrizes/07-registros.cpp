@@ -25,7 +25,8 @@ int main()
 
     for (int i = 0; i < 5; i++)
     {
-        cout << endl << "ALUMNO " << i + 1 << endl;
+        cout << endl
+             << "ALUMNO " << i + 1 << endl;
         for (int j = 0; j < 2; j++)
         {
             if (j == 0)
@@ -41,6 +42,6 @@ int main()
         }
     }
 
-// hola es para probar el github
+    // hola es para probar el github
     return 0;
 }
