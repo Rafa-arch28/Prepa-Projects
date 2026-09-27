@@ -97,5 +97,5 @@ void guardar_alumnos_libros(Alumno alumnos_libros[MAXIMO], int& total, int& LIBR
 
 void guardar_alumnos_compus(Alumno alumnos_compus[MAXIMO], int& total)
 {
-        
+        // holaaa
 }
