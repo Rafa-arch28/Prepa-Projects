@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-const int ESTUDIANTES = 2;
+const int ESTUDIANTES = 50;
 const int COLUMNAS = 2; // 0. Nombre, 1. Voto
 
 void registrar_voto(string votos[][COLUMNAS]);
@@ -31,18 +31,17 @@ void registrar_voto(string votos[][COLUMNAS])
         cin >> votos[i][1];
 
         cin.ignore();
-
     }
 }
 
 void imprimir_votos(string votos[][COLUMNAS])
 {
-    int r = 0,v = 0,a = 0;
+    int r = 0, v = 0, a = 0;
     for (int i = 0; i < ESTUDIANTES; i++)
     {
         cout << "ESTUDIANTE #" << i + 1 << endl;
         cout << "NOMBRE: " << votos[i][0] << endl;
-        
+
         if (votos[i][1] == "1")
         {
             cout << "VOTO POR PLANILLA ROJA" << endl;
@@ -63,7 +62,8 @@ void imprimir_votos(string votos[][COLUMNAS])
             cout << "VOTO INVALIDO O NO VOTO" << endl;
         }
     }
-    cout << endl << "VOTOS PLANILLA" << endl;
+    cout << endl
+         << "VOTOS PLANILLA" << endl;
     cout << "PLANILLA ROJA: " << r << endl;
     cout << "PLANILLA VERDE: " << v << endl;
     cout << "PLANILLA AZUL: " << a << endl;

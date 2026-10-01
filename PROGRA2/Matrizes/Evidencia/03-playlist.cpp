@@ -1,4 +1,5 @@
 #include <iostream>
+#include <string>
 using namespace std;
 
 const int MAXIMOS = 10;
@@ -9,12 +10,11 @@ void imprimir_playlist(string playlist[][COLUMNAS], string nombre);
 
 int main()
 {
-
-    string playlist[10][COLUMNAS];
+    string playlist[MAXIMOS][COLUMNAS];
     string nombre;
 
     cout << "Ingrese su nombre para crear su playlist: ";
-    cin >> nombre;
+    getline(cin, nombre);
 
     guardar_canciones(playlist);
     imprimir_playlist(playlist, nombre);
@@ -24,7 +24,6 @@ int main()
 
 void guardar_canciones(string playlist[][COLUMNAS])
 {
-    cin.ignore();
     for (int i = 0; i < MAXIMOS; i++)
     {
         cout << "CANCION #" << i + 1 << endl;
@@ -39,7 +38,8 @@ void guardar_canciones(string playlist[][COLUMNAS])
 
 void imprimir_playlist(string playlist[][COLUMNAS], string nombre)
 {
-    cout << "PLAYLIST DE " << nombre << endl << endl;
+    cout << "PLAYLIST DE " << nombre << endl
+         << endl;
     for (int i = 0; i < MAXIMOS; i++)
     {
         cout << "CANCION #" << i + 1 << endl;
