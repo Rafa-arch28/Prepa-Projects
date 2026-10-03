@@ -1,5 +1,4 @@
 #include <iostream>
-#include <vector>
 #include <cmath>
 using namespace std;
 
@@ -8,16 +7,14 @@ using namespace std;
 const double M_PI = 3.1416;
 #endif
 
-// FUNCION CON PASO POR REFERENCIA PARA MODIFICAR DIRECTO EL ORIGINAL
-void guardar_valor(vector<double> &vec);
+void guardar_valor(double vec[]);
 double convertir_d_r(int numero);
-void imprimir_valores(const vector<double> &vec);
+void imprimir_valores(const double vec[]);
 
 int main()
 {
 
-    // FORMA DE DECLARAR UN VECTOR
-    vector<double> numeros(10);
+    double numeros[10];
     double valor = 0;
 
     guardar_valor(numeros);
@@ -26,7 +23,7 @@ int main()
     return 0;
 }
 
-void guardar_valor(vector<double> &vec)
+void guardar_valor(double vec[])
 {
     int numero = 0;
     for (int i = 0; i < 10; i++)
@@ -47,8 +44,6 @@ void guardar_valor(vector<double> &vec)
 
         double valor = sin(radianes);
         cout << "Valor del seno del numero: " << valor << endl;
-        // numeros.push_back(valor); ESTA LINEA PODRIA SER USADA SI NO TUVIERA DECLARADOS LOS INDICES DEL VECTOR
-        // CUANDO ESTAN DECLARADOS LOS INDICES LO MEJOR ES HACERLO COMO UN ARREGLO NORMAL:
         vec[i] = valor;
     }
 }
@@ -60,22 +55,22 @@ double convertir_d_r(int numero)
 }
 
 /*
-Algo interesante de las funciones con los vectores ademas de su paso por referencia es que cuando se necesiten
+Algo interesante de las funciones con los arreglos ademas de su paso por referencia es que cuando se necesiten
 imprimir, es mucho mejor usar igual el paso por referencia y el candado CONST. EL paso por referencia hace que
-el compilador haga un acceso directo al vector original, sin hacer copias y optimizando el uso de la memoria
+el compilador haga un acceso directo al arreglo original, sin hacer copias y optimizando el uso de la memoria
 (ahorita porque son muy pocos elementos no se nota pero en programas con millones de indices talvez si) y el
 candado CONST le dice a c++ "Oye, este es solo un valor de lectura para que no vayas a hacer nada raro", es la misma
 funcion de cuando se usa en un programa normal, prohibe modificar el valor haciendolo constante :)
 */
-void imprimir_valores(const vector<double> &vec)
+void imprimir_valores(const double vec[])
 {
     cout << "--- Imprimir valores entre 0 y 0.5 ---" << endl;
 
-    for (const auto &n : vec)
+    for (int i = 0; i < 10; i++)
     {
-        if (n >= 0 && n <= 0.5)
+        if (vec[i] >= 0 && vec[i] <= 0.5)
         {
-            cout << "Valor: " << n << endl;
+            cout << "Valor: " << vec[i] << endl;
         }
     }
 }
