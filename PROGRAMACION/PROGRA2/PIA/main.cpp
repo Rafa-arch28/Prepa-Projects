@@ -272,3 +272,5 @@ void mostrar_menu(Alumno alumnos[MAXIMO], int& total, int& LIBROS, int& libros_p
                 }
         } while(bandera);
 }
+
+//HOLAA
