@@ -1,3 +1,6 @@
+// Para este programa preferi usar cin >> ws en vez de cin.ignore() debido a un problema que tuve
+// en la funcion buscar_registro, cin >> ws elimina tooodo lo anterior, ignore solo eliminaba uno
+
 #include <iostream>
 #include <string>
 
@@ -98,7 +101,7 @@ void llenar_registro(Registro registros[], int &total)
             for (int i = 0; i < opc; i++)
             {
                 cout << "REGISTRO #" << total + 1 << endl;
-                cin.ignore();
+                cin >> ws;
                 cout << "NOMBRE" << endl;
                 cout << "Ingrese su nombre (MAXIMO 40 CARACTERES): ";
                 getline(cin, nombre);
@@ -194,6 +197,8 @@ void imprimir_mayor_7(Registro registros[], int total)
 void buscar_registro(Registro registros[], int total)
 {
     string nombre;
+    bool encontrado = false;
+
     if (total == 0)
     {
         cout << "NO HAY REGISTROS" << endl;
@@ -202,12 +207,14 @@ void buscar_registro(Registro registros[], int total)
     {
         cout << "\t\tBUSQUEDA DE REGISTROS" << endl;
         cout << "Ingrese el nombre del registro que quiere buscar: ";
-        cin.ignore();
+        cin >> ws;
         getline(cin, nombre);
+
         for (int i = 0; i < total; i++)
         {
             if (registros[i].nombre == nombre)
             {
+                encontrado = true;
                 cout << "ENCONTRADOOOO" << endl;
                 cout << "REGISTRO #" << i + 1 << endl;
                 cout << "NOMBRE: " << registros[i].nombre << endl;
@@ -215,6 +222,12 @@ void buscar_registro(Registro registros[], int total)
                 cout << "ESTATURA (CM): " << registros[i].estatura << endl;
             }
         }
+
+        if (!encontrado)
+        {
+            cout << "NO SE ENCONTRO UN REGISTRO CON ESE NOMBRE" << endl;
+        }
+
         cout << endl;
     }
 }
