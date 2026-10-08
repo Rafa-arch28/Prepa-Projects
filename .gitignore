@@ -1,6 +1,15 @@
 # Ignorar todos los ejecutables de Windows
 *.exe
 
+# Ignorar archivos de texto generados por los programas
+*.txt
+
+# Ignorar ejecutables generados por Linux
+a.out
+*.out
+main
+*.bin
+
 # Ignorar archivos objeto (se crean al compilar en C++)
 *.o
 *.obj
