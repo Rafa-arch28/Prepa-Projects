@@ -132,18 +132,24 @@ bool cargar_alumnos(Alumno alumnos[MAXIMO], int& total)
         }
 
         int cantidad = 0;
+
+        // esta condicion es algo rara, dice: si el archivo no pudo leer cantidad o cantidad es negativa o cantidad supera los maximos
+        // imprime el error, por ahora para imprimir todos los errores usare cout, pero cerr es una forma mas limpia de
+        // literalmente imprimir errores, ya que se traduce como char error >:)
         if (!(archivo >> cantidad) || cantidad < 0 || cantidad > MAXIMO)
         {
-                cerr << "ERROR EL FORMATO DE ALUMNOS.TXT NO ES VALIDO" << endl;
+                cout << "ERROR EL FORMATO DE ALUMNOS.TXT NO ES VALIDO" << endl;
                 total = 0;
                 return false;
         }
 
+        // Esta linea dice, archivo, ignora hazta mil caracteres hasta que encuentres un salto de linea
+        // esto mas profesional se veria como staticast<streamsize>::max asi masomenos, pero es para que le entiendan
         archivo.ignore(1000, '\n');
         total = 0;
         for (int i = 0; i < cantidad; i++)
         {
-                Alumno alumno{};
+                Alumno alumno{}; // al definir un struct con {} pone todos los miembros o inicializados en 0 o vacios en caso de strings
                 // Este if sirve para revisar si cada dato se pudo leer correctamente
                 // Uso OR para detectar si al menos una lectura fallo
                 if (!getline(archivo, alumno.nombre)
@@ -160,6 +166,7 @@ bool cargar_alumnos(Alumno alumnos[MAXIMO], int& total)
                         total = 0;
                         return false;
                 }
+                // volvemos a ignorar hasta mil caracteres
                 archivo.ignore(1000, '\n');
                 if (!getline(archivo, alumno.nombre_libro))
                 {
@@ -167,6 +174,8 @@ bool cargar_alumnos(Alumno alumnos[MAXIMO], int& total)
                         total = 0;
                         return false;
                 }
+                // esto se pudo hacer como alumnos[total++] = alumno, como el ++ esta despues, total se incrementa despues de guardar a posicion
+                // pero en este caso lo cambie asi para que mis companeros pudieran entenderlo mejor
                 alumnos[total] = alumno;
                 total++;
         }
