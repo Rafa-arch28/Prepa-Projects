@@ -48,4 +48,5 @@ int main()
             cout << personas[i].fecha.dia << "/" << personas[i].fecha.mes << "/" << personas[i].fecha.anio << '\n' << endl;
         }
     }
+    return 0;
 }

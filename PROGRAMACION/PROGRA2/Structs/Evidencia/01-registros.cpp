@@ -101,19 +101,20 @@ void llenar_registro(Registro registros[], int &total)
             for (int i = 0; i < opc; i++)
             {
                 cout << "REGISTRO #" << total + 1 << endl;
-                cin >> ws;
                 cout << "NOMBRE" << endl;
                 cout << "Ingrese su nombre (MAXIMO 40 CARACTERES): ";
-                getline(cin, nombre);
-                if (nombre.length() > 40)
+                do
                 {
-                    cout << "Nombre invalido, vuelva a intentar en el menu" << endl;
-                    return;
-                }
-                else
-                {
-                    registros[total].nombre = nombre;
-                }
+                    cin >> ws;
+                    getline(cin, nombre);
+                    if (nombre.length() > 40)
+                    {
+                        cout << "Nombre invalido, maximo 40 caracteres." << endl;
+                        cout << "Ingrese su nombre nuevamente: ";
+                    }
+                } while (nombre.length() > 40);
+
+                registros[total].nombre = nombre;
 
                 cout << "FECHA DE NACIMIENTO" << endl;
                 cout << "Ingrese el dia: ";
@@ -169,6 +170,7 @@ void imprimir_mayor_7(Registro registros[], int total)
     {
         cout << "NO HAY REGISTROS" << endl;
         cout << endl;
+        return;
     }
     else
     {
@@ -207,7 +209,7 @@ void buscar_registro(Registro registros[], int total)
     {
         cout << "\t\tBUSQUEDA DE REGISTROS" << endl;
         cout << "Ingrese el nombre del registro que quiere buscar: ";
-        cin >> ws;
+        cin >>ws;
         getline(cin, nombre);
 
         for (int i = 0; i < total; i++)
