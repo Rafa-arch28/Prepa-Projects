@@ -143,7 +143,7 @@ bool cargar_alumnos(Alumno alumnos[MAXIMO], int& total)
                 return false;
         }
 
-        // Esta linea dice, archivo, ignora hazta mil caracteres hasta que encuentres un salto de linea
+        // Esta linea dice, archivo, ignora hasta mil caracteres hasta que encuentres un salto de linea
         // esto mas profesional se veria como staticast<streamsize>::max asi masomenos, pero es para que le entiendan
         archivo.ignore(1000, '\n');
         total = 0;

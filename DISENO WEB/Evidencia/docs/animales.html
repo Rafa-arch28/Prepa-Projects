@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="images/icono_t.ico" type="image/x-icon"/>
+    <title>The Peacock Turtle</title>
+    <style>
+        body {
+            background-color: rgb(255, 255, 226);
+        }
+
+        h2 {
+            font-size: 50px;
+            text-align: center;
+            color: darkolivegreen;
+        }
+
+        h3 {
+            font-size: 50px;
+            text-align: center;
+            color: rgb(71, 90, 39);
+        }
+
+        p {
+            font-size: larger;
+            text-align: center;
+            color: black;
+        }
+
+        #titulo {
+            text-align: center;
+            color: rgb(71, 90, 39);
+            font-size: 100px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+
+        #menu {
+            background-color: rgb(194, 209, 167);
+            padding: 15px;
+            text-align: center;
+            font-size: 20px;
+            color: aliceblue;
+            /* mantiene el menú pegado a la parte superior cuando el usuario se desplaza */
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        #menu a {
+            color: rgb(71, 90, 39);
+        }
+
+        footer {
+            padding: 5px;
+            display: flex;
+            justify-content: center;
+            background-color: rgb(194, 209, 167);
+            font-size: xx-large;
+        }
+
+        footer p {
+            color: rgb(71, 90, 39);
+        }
+
+        /* agrega espacio interno uniforme alrededor del contenido de cada sección del tema */
+        .tema {
+            padding: 20px 30px;
+        }
+
+        /* organiza el texto y el grupo de dos imgs en una fila */
+        .tema-contenido {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* deja que el bloque de texto ocupe el espacio que pueda y conserve el centrado */
+        .tema-texto {
+            flex: 1;
+        }
+
+        /* agrupa las dos imagenes por seccion con al texto y limita el ancho que ocupa ese grupo */
+        .tema-imagenes {
+            display: flex;
+            gap: 15px;
+            flex: 0 1 430px; /*delimita el ancho*/
+        }
+
+        /* da a todas las imágenes de las secciones la misma altura recorte y esquinas redondeadas */
+        .tema-imagenes img {
+            width: calc(50% - 8px); /* para calcular */
+            height: 220px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        /* invierte la fila solo en las secciones marcadas para colocar las imágenes a la izquierda */
+        .imagenes-izquierda .tema-contenido {
+            flex-direction: row-reverse;
+        }
+
+        /* define el espacio, ancho máximo, tamaño de letra y altura de línea de cada elemento de lista */
+        .tema li {
+            margin: 12px auto;
+            max-width: 850px;
+            font-size: larger;
+            line-height: 1.5;
+        }
+
+        /* centra el bloque completo de la lista y conserva espacio para sus cositas esas */
+        .tema ul {
+            width: fit-content;
+            max-width: 850px;
+            margin: 0 auto;
+            padding-left: 30px;
+        }
+
+        /* convierte el enlace para volver al inicio en un bloque centrado con el color del menú */
+        .volver {
+            display: block;
+            text-align: center;
+            color: darkolivegreen;
+            font-size: large;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- estas etiquetas estructurales separan el encabezado y el pie de página -->
+    <header>
+        <nav id="menu">
+            <a href="#que-son">What are they?</a> |
+            <a href="#curiosidades">Curiosities</a> |
+            <a href="#conseguir">How to get one</a> |
+            <a href="#cuidados">Care</a> |
+            <a href="#consejos">Advice</a>
+        </nav>
+        <h1 id="titulo">The Peacock Turtle</h1>
+    </header>
+
+        <!-- cada sección tiene un identificador que coincide con una opción del menú de navegación -->
+        <section id="que-son" class="tema">
+            <h2>What are they?</h2>
+            <!-- este contenedor reúne el texto y las dos imágenes que pertenecen a esta sección -->
+            <div class="tema-contenido">
+                <div class="tema-texto">
+                    <p>
+                        Peacock turtles are semi-aquatic reptiles known for the colors and
+                        patterns on their shells. They mainly live in rivers, lagoons, and
+                        tropical areas of South America.
+                    </p>
+                    <p>
+                        They need both a space with water for swimming and a dry area where
+                        they can rest and receive light.
+                    </p>
+                </div>
+                <div class="tema-imagenes">
+                    <img src="images/image.png" alt="Peacock turtle swimming">
+                    <img src="images/image copy.png" alt="Peacock turtle in the water">
+                </div>
+            </div>
+        </section>
+
+        <section id="curiosidades" class="tema imagenes-izquierda">
+            <h2>Curiosities</h2>
+            <div class="tema-contenido">
+                <div class="tema-texto">
+                    <ul>
+                        <li>Their shells can have patterns that resemble the eyes of a peacock.</li>
+                        <li>They are excellent swimmers and spend much of their time in the water.</li>
+                        <li>Like other reptiles, they depend on their environment to regulate their temperature.</li>
+                        <li>They can live for many years when they receive proper food and care.</li>
+                    </ul>
+                </div>
+                <div class="tema-imagenes">
+                    <img src="images/image copy 2.png" alt="Peacock turtle close-up">
+                    <img src="images/image copy 3.png" alt="Peacock turtle in its habitat">
+                </div>
+            </div>
+        </section>
+
+        <section id="conseguir" class="tema">
+            <h2>How to get one</h2>
+            <div class="tema-contenido">
+                <div class="tema-texto">
+                    <p>
+                        Before getting a peacock turtle, find out whether keeping one is
+                        allowed in your area. Only get one from a legal breeder or store
+                        that can prove its origin.
+                    </p>
+                    <p>
+                        Never buy animals captured from their natural habitat or release
+                        them into rivers or lagoons. It is also important to prepare their
+                        space and have the necessary budget before bringing one home.
+                    </p>
+                </div>
+                <div class="tema-imagenes">
+                    <img src="images/image copy 4.png" alt="Peacock turtle resting">
+                    <img src="images/image copy 5.png" alt="Peacock turtle shell">
+                </div>
+            </div>
+        </section>
+
+        <section id="cuidados" class="tema imagenes-izquierda">
+            <h2>Care for a healthy life</h2>
+            <div class="tema-contenido">
+                <div class="tema-texto">
+                    <ul>
+                        <li>Provide a large aquarium with clean water and a dry area for resting.</li>
+                        <li>Use a suitable filter and perform partial water changes regularly.</li>
+                        <li>Keep a stable temperature and use specialized reptile lighting.</li>
+                        <li>Offer a varied diet recommended by a specialized veterinarian.</li>
+                        <li>Watch their behavior, appetite, and shell for changes.</li>
+                    </ul>
+                </div>
+                <div class="tema-imagenes">
+                    <img src="images/canva-dos-tortugas-en-la-superficie-de-un-estanque-con-nenúfares-MAG2tAGZ0FM.jpg" alt="Two turtles in a pond">
+                    <img src="images/canva-primer-plano-de-tortugas-en-las-rocas-del-acuario-MAG2cjyqpQc.jpg" alt="Turtle on aquarium rocks">
+                </div>
+            </div>
+        </section>
+
+        <section id="consejos" class="tema">
+            <h2>Advice</h2>
+            <div class="tema-contenido">
+                <div class="tema-texto">
+                    <p>
+                        Wash your hands after touching the turtle or cleaning its space and
+                        avoid handling it unnecessarily. Turtles can carry bacteria that
+                        affect people, so hygiene is essential.
+                    </p>
+                    <p>
+                        If you notice that it stops eating, has trouble breathing, or has
+                        changes in its shell, consult an exotic-animal veterinarian and do
+                        not try to medicate it yourself.
+                    </p>
+                </div>
+                <div class="tema-imagenes">
+                    <img src="images/Cuando-se-aparean-las-tortugas-pavorreal.jpg" alt="Peacock turtles together">
+                    <img src="images/pavo-real_2-1024x1024.jpg" alt="Peacock turtle">
+                </div>
+            </div>
+        </section>
+    <!-- el pie de página contiene los datos de contacto y el enlace para regresar al inicio -->
+    <footer>
+        <section id="contacto">
+            <h3>Contact us!</h3>
+            <p>
+                E-mail: pavorealturtles@gmail.com<br>
+                Facebook: @pavo_turtles<br>
+                Instagram: @turtlepavooo
+            </p>
+            <a class="volver" href="index.html">Back to the home page</a>
+        </section>
+    </footer>
+</body>
+</html>
