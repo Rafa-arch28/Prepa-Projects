@@ -146,6 +146,7 @@ void mostrar_todos(Cliente clientes[], int& total)
                 getline(archivo, clientes[contador].telefono);
 
                 // el estado de pago se lee como texto y stof() lo convierte a float porque puede contener decimales
+                // se traduce como String to Float
                 getline(archivo, linea);
                 clientes[contador].estado_pago = stof(linea);
 

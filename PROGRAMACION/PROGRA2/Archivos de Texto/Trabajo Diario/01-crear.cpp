@@ -8,7 +8,7 @@ int main()
 {
     // Si quiero ingresar sin modificar lo otro, solo pon:
     // ofstream archivo("prueba.txt", ios::app);
-    ofstream archivo("prueba2.txt");
+    ofstream archivo("prueba1.txt");
 
     if (!archivo)
     {
@@ -35,5 +35,6 @@ int main()
             archivo.close();
             return 0;
         }
+        c++;
     }
 }
