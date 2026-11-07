@@ -20,9 +20,9 @@ struct Cliente
     float estado_pago;
 };
 
-void guardar(Cliente clientes[], int& total);
-void mostrar_todos(Cliente clientes[], int& total);
-void menu(Cliente clientes[], int& total);
+void guardar(Cliente clientes[], int &total);
+void mostrar_todos(Cliente clientes[], int &total);
+void menu(Cliente clientes[], int &total);
 
 int main()
 {
@@ -34,7 +34,7 @@ int main()
     return 0;
 }
 
-void guardar(Cliente clientes[], int& total)
+void guardar(Cliente clientes[], int &total)
 {
     ifstream archivo_lectura("clientes_empresa.txt");
     string linea;
@@ -42,7 +42,7 @@ void guardar(Cliente clientes[], int& total)
     total = 0;
     while (getline(archivo_lectura, linea))
     {
-        if (linea.starts_with("CLIENTE #"))
+        if (linea.rfind("CLIENTE #", 0) == 0)
         {
             total++;
         }
@@ -60,7 +60,7 @@ void guardar(Cliente clientes[], int& total)
         cout << "Ingrese el numero de clientes que quiere registrar: ";
         cin >> n;
 
-        if (n <= 0 || (n+total) > MAXIMO)
+        if (n <= 0 || (n + total) > MAXIMO)
         {
             cout << "\tLO SIENTO CANTIDAD INCORRECTA O REGISTROS LLENOS" << endl;
             cout << endl;
@@ -100,7 +100,8 @@ void guardar(Cliente clientes[], int& total)
 
                 cout << "Dinero que debe el cliente: ";
                 cin >> clientes[total].estado_pago;
-                archivo << clientes[total].estado_pago << endl << endl;
+                archivo << clientes[total].estado_pago << endl
+                        << endl;
 
                 total++;
             }
@@ -109,7 +110,7 @@ void guardar(Cliente clientes[], int& total)
         }
     }
 }
-void mostrar_todos(Cliente clientes[], int& total)
+void mostrar_todos(Cliente clientes[], int &total)
 {
     // Con esta linea se abre el archivo para leer los clientes guardados
     ifstream archivo("clientes_empresa.txt");
@@ -130,7 +131,7 @@ void mostrar_todos(Cliente clientes[], int& total)
         while (getline(archivo, linea))
         {
             // Esta linea indica el inicio de los datos de un cliente
-            if (linea.starts_with("CLIENTE #"))
+            if (linea.rfind("CLIENTE #", 0) == 0)
             {
                 // Los primeros tres datos son texto, por eso se leen directamente como string
                 getline(archivo, clientes[contador].nombre);
@@ -156,10 +157,10 @@ void mostrar_todos(Cliente clientes[], int& total)
                 cout << "Calle: " << clientes[contador].direccion.calle << endl;
                 cout << "Colonia: " << clientes[contador].direccion.colonia << endl;
                 cout << "Numero de casa: "
-                    << clientes[contador].direccion.num_casa << endl;
+                     << clientes[contador].direccion.num_casa << endl;
                 cout << "Telefono: +52 " << clientes[contador].telefono << endl;
                 cout << "Dinero que debe: "
-                    << clientes[contador].estado_pago << endl;
+                     << clientes[contador].estado_pago << endl;
                 cout << endl;
 
                 // aqui aumenta el contador para guardar el siguiente cliente en la siguiente posicion del arreglo
@@ -173,7 +174,7 @@ void mostrar_todos(Cliente clientes[], int& total)
     }
 }
 
-void menu(Cliente clientes[], int& total)
+void menu(Cliente clientes[], int &total)
 {
     int opcion = 0;
 
@@ -189,21 +190,21 @@ void menu(Cliente clientes[], int& total)
 
         switch (opcion)
         {
-            case 1:
-                guardar(clientes, total);
-                break;
+        case 1:
+            guardar(clientes, total);
+            break;
 
-            case 2:
-                mostrar_todos(clientes, total);
-                break;
+        case 2:
+            mostrar_todos(clientes, total);
+            break;
 
-            case 3:
-                cout << "PROGRAMA FINALIZADO" << endl;
-                break;
+        case 3:
+            cout << "PROGRAMA FINALIZADO" << endl;
+            break;
 
-            default:
-                cout << "\tOPCION INCORRECTA" << endl;
-                cout << endl;
+        default:
+            cout << "\tOPCION INCORRECTA" << endl;
+            cout << endl;
         }
     } while (opcion != 3);
 }

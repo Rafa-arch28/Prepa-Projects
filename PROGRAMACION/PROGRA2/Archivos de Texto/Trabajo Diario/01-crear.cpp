@@ -8,7 +8,7 @@ int main()
 {
     // Si quiero ingresar sin modificar lo otro, solo pon:
     // ofstream archivo("prueba.txt", ios::app);
-    ofstream archivo("prueba1.txt");
+    ofstream archivo("salidatexto.txt");
 
     if (!archivo)
     {
@@ -16,12 +16,11 @@ int main()
         return 1;
     }
 
-
     int c = 0;
     bool bandera = true;
     string linea;
 
-    while (bandera)
+    while (true)
     {
         cout << "Ingrese cualquier cosa en la liena " << c << ", si quiere salir ingrese '*': ";
         cin >> linea;
@@ -33,8 +32,9 @@ int main()
         else
         {
             archivo.close();
-            return 0;
+            break;
         }
         c++;
     }
+    return 0;
 }
